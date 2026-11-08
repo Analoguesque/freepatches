@@ -42,6 +42,51 @@
             color: #777;
             font-style: italic;
         }
+
+
+        /* Download link tooltip */
+
+a[data-tooltip] {
+    position: relative;
+    display: inline-block;
+}
+
+a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 135%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #292929;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 6px;
+
+    font-size: 13px;
+    line-height: 1.5;
+    width: 260px;
+    text-align: left;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+
+    pointer-events: none;
+}
+
+/* Show tooltip when hovering */
+
+a[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+        
     </style>
 </head>
 
@@ -72,7 +117,7 @@
     &nbsp;&nbsp;BANK F - Analoguesque Leftovers (128 patches)<br>
     &nbsp;&nbsp;BANK G - Analoguesque Serpentine Hydra (128 patches)<br>
     &nbsp;&nbsp;BANK H - Analoguesque Draconic Hydra (128 patches)<br><br>
-    <a href="downloads/Analoguesque_ASM_HYDRASYNTH_Banks.zip" download>DOWNLOAD ASM HYDRASYNTH PATCH BANKS</a><br><br>
+    <a href="downloads/Analoguesque_ASM_HYDRASYNTH_Banks.zip" download data-tooltip="1024 free patches across 8 banks, featuring analog, digital, experimental and esoteric synthesizer sounds for the ASM Hydrasynth.">DOWNLOAD ASM HYDRASYNTH PATCH BANKS</a><br><br>
 
     <h3><u>Yamaha SY-77</u></h3>
     <p>
